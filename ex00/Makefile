@@ -6,7 +6,7 @@
 #    By: spitul <spitul@student.42berlin.de>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/13 17:47:50 by spitul            #+#    #+#              #
-#    Updated: 2025/07/04 08:33:27 by spitul           ###   ########.fr        #
+#    Updated: 2025/07/04 08:34:06 by spitul           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,6 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
-	rm -f *_shrubbery
 
 re: fclean all
 
