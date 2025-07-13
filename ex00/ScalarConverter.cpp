@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spitul <spitul@student.42berlin.de >       +#+  +:+       +#+        */
+/*   By: spitul <spitul@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/11 16:23:54 by spitul            #+#    #+#             */
-/*   Updated: 2025/07/12 18:32:21 by spitul           ###   ########.fr       */
+/*   Updated: 2025/07/13 09:48:39 by spitul           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@
 int ScalarConverter::getType(std::string &str)
 {
 	int	i = 0;
+	bool	dot = false;
 	
 	if (str.compare("nanf") == 0 || str.compare("nan") == 0)
 		return NAN;
@@ -51,7 +52,11 @@ int ScalarConverter::getType(std::string &str)
 		return CHAR;
 	while (i < str.length())
 	{
-		
+		if (str[i] == '.')
+			dot = true;
+		if (isdigit(static_cast<unsigned char>(str[i])) == 0)
+			
+				
 	} 
 	
 }
