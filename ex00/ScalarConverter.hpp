@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spitul <spitul@student.42berlin.de >       +#+  +:+       +#+        */
+/*   By: spitul <spitul@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/11 16:23:50 by spitul            #+#    #+#             */
-/*   Updated: 2025/07/11 17:19:34 by spitul           ###   ########.fr       */
+/*   Updated: 2025/07/13 20:40:03 by spitul           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ class ScalarConverter
 		DOUBLE = 4,
 		NAN = 5,
 		INF_NEG = 6,
-		INF_POS = 7
+		INF_POS = 7,
+		MISMATCH = 8
 	};
 
 	ScalarConverter();
