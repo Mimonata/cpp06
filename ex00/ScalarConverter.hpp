@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spitul <spitul@student.42berlin.de>        +#+  +:+       +#+        */
+/*   By: spitul <spitul@student.42berlin.de >       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/11 16:23:50 by spitul            #+#    #+#             */
-/*   Updated: 2025/07/13 20:40:03 by spitul           ###   ########.fr       */
+/*   Updated: 2025/07/14 13:15:55 by spitul           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,10 @@ class ScalarConverter
 	ScalarConverter &operator=(const ScalarConverter &other);
 	ScalarConverter(const ScalarConverter &other);
 
-	int getType(std::string &str);
+	static int getType(std::string &str);
+	static void	printPseudoLit(int type);
+	static void	printChar(int c);
+	static void	printScalar(std::string str);
 
   public:
 	static void convert(std::string str);
