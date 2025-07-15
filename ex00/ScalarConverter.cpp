@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spitul <spitul@student.42berlin.de >       +#+  +:+       +#+        */
+/*   By: spitul <spitul@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/11 16:23:54 by spitul            #+#    #+#             */
-/*   Updated: 2025/07/14 16:39:16 by spitul           ###   ########.fr       */
+/*   Updated: 2025/07/15 08:50:10 by spitul           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,11 +81,8 @@ int ScalarConverter::getType(std::string &str)
 void	ScalarConverter::printScalar(std::string str)
 {
 	double	dbl;
-	
-	
+		
 	dbl = atof(str.c_str());
-	
-	
 	std::cout << "int: ";
 	if (dbl > INT_MAX || dbl < INT_MIN)
 		std::cout << "impossible" << std::endl;
@@ -106,7 +103,7 @@ void	ScalarConverter::printChar(int c)
 {
 	std::cout << "char: ";
 	if (isprint(c))
-		std::cout << static_cast<char>(c);
+		std::cout << "'" << static_cast<char>(c) << "'";
 	else
 	{
 		if (c < 0 || c > 127)
@@ -140,6 +137,8 @@ void ScalarConverter::convert(std::string str)
 	{
 		case CHAR:
 			printChar(str[0]);
+			printScalar(str);
+			break;
 		case INT:
 		case FLOAT:
 		case DOUBLE:
@@ -149,6 +148,7 @@ void ScalarConverter::convert(std::string str)
 		case INF_NEG:
 		case INF_POS:
 			printPseudoLit(type);
+			break;
 		case MISMATCH:
 			std::cout << "char: impossible\nint: impossible\nfloat: impossible\ndouble: impossible\n";
 			break; 
