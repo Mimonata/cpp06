@@ -6,7 +6,7 @@
 /*   By: spitul <spitul@student.42berlin.de >       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/11 16:23:50 by spitul            #+#    #+#             */
-/*   Updated: 2025/07/14 13:15:55 by spitul           ###   ########.fr       */
+/*   Updated: 2025/07/15 16:01:05 by spitul           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ class ScalarConverter
 	static int getType(std::string &str);
 	static void	printPseudoLit(int type);
 	static void	printChar(int c);
-	static void	printScalar(std::string str);
+	static void	printScalar(std::string str, int type);
 
   public:
 	static void convert(std::string str);

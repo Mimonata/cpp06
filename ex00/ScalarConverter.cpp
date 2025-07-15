@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spitul <spitul@student.42berlin.de>        +#+  +:+       +#+        */
+/*   By: spitul <spitul@student.42berlin.de >       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/11 16:23:54 by spitul            #+#    #+#             */
-/*   Updated: 2025/07/15 08:50:10 by spitul           ###   ########.fr       */
+/*   Updated: 2025/07/15 16:25:44 by spitul           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,11 +78,20 @@ int ScalarConverter::getType(std::string &str)
 		return INT;
 }
 
-void	ScalarConverter::printScalar(std::string str)
+void	ScalarConverter::printScalar(std::string str, int type)
 {
 	double	dbl;
 		
-	dbl = atof(str.c_str());
+	if (type == CHAR)
+	{
+		dbl = static_cast<unsigned char>(str[0]);
+		printChar(dbl);
+	}	
+	else
+	{
+		dbl = atof(str.c_str());
+		printChar(static_cast<int>(dbl));
+	}
 	std::cout << "int: ";
 	if (dbl > INT_MAX || dbl < INT_MIN)
 		std::cout << "impossible" << std::endl;
@@ -96,7 +105,10 @@ void	ScalarConverter::printScalar(std::string str)
 		std::cout << std::fixed << std:: setprecision(1) << static_cast<float>(dbl) << "f" << std::endl;
 
 	std::cout << "double: ";
-	std::cout << dbl << std::endl;		
+	if (dbl > DBL_MAX && dbl < -DBL_MAX)
+		std::cout << "impossible" << std::endl;
+	else
+		std::cout << dbl << std::endl;		
 }
 
 void	ScalarConverter::printChar(int c)
@@ -116,7 +128,7 @@ void	ScalarConverter::printChar(int c)
 
 void	ScalarConverter::printPseudoLit(int type)
 {
-	std::cout << "char: impossible \nint: impossible \nfloat: " << std::endl;
+	std::cout << "char: impossible \nint: impossible \nfloat: ";
 	
 	if (type == NAN)
 		std::cout << "nanf \ndouble: nan";
@@ -136,13 +148,10 @@ void ScalarConverter::convert(std::string str)
 	switch (type)
 	{
 		case CHAR:
-			printChar(str[0]);
-			printScalar(str);
-			break;
 		case INT:
 		case FLOAT:
 		case DOUBLE:
-			printScalar(str);
+			printScalar(str, type);
 			break;
 		case NAN:
 		case INF_NEG:
