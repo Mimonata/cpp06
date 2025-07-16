@@ -3,18 +3,18 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: spitul <spitul@student.42berlin.de >       +#+  +:+       +#+         #
+#    By: spitul <spitul@student.42berlin.de>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/13 17:47:50 by spitul            #+#    #+#              #
-#    Updated: 2025/07/15 16:38:56 by spitul           ###   ########.fr        #
+#    Updated: 2025/07/16 21:16:46 by spitul           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp Serialize.cpp
+SRC = main.cpp Serialize.cpp Data.cpp
 OBJ = $(addprefix obj/, $(SRC:.cpp=.o))
 CC = c++
 CPPFLAGS = -g -Wall -Wextra -Werror -std=c++98 -pedantic
-HEADERS = Serialize.hpp
+HEADERS = Serialize.hpp Data.hpp
 
 NAME = serializer
 

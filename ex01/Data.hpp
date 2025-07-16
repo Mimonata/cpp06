@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.cpp                                     :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spitul <spitul@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/15 16:34:32 by spitul            #+#    #+#             */
-/*   Updated: 2025/07/16 21:35:32 by spitul           ###   ########.fr       */
+/*   Created: 2025/07/16 21:07:09 by spitul            #+#    #+#             */
+/*   Updated: 2025/07/16 21:12:28 by spitul           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serializer.hpp"
+#ifndef DATA_HPP
+#define DATA_HPP
 
-
-Serializer::Serializer()
+class Data
 {
-}
+	private:
+		int	_val;
+	
+	public:
+		Data(int val);
+		Data(const Data &other);
+		Data& operator=(const Data &other);
+		~Data();
+};
 
-Serializer::~Serializer()
-{
-}
-
-uintptr_t	serialize(Data* ptr)
-{
-	return reinterpret_cast<uintptr_t>(ptr);
-}
-
-static Data*	deserialize(uintptr_t raw)
-{
-	return reinterpret_cast<Data*>(raw);
-}
+#endif
