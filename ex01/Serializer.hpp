@@ -6,14 +6,14 @@
 /*   By: spitul <spitul@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 16:33:12 by spitul            #+#    #+#             */
-/*   Updated: 2025/07/16 21:20:04 by spitul           ###   ########.fr       */
+/*   Updated: 2025/07/17 07:12:28 by spitul           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SERIALIZER_HPP
 #define SERIALIZER_HPP
 
-#include <cstdint>
+#include <stdint.h>
 
 class Data;
 
