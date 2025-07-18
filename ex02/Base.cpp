@@ -6,7 +6,7 @@
 /*   By: spitul <spitul@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 21:08:39 by spitul            #+#    #+#             */
-/*   Updated: 2025/07/18 06:47:05 by spitul           ###   ########.fr       */
+/*   Updated: 2025/07/18 20:13:10 by spitul           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Base::~Base(){}
 
 Base	*generate(void)
 {
-	std::srand(std::time(0));
+	//std::srand(std::time(0));
 	int	r = std::rand() % 3;
 	
 	switch(r)
@@ -52,7 +52,7 @@ void identify(Base& p)
 	try
 	{
 		A &tmp = dynamic_cast<A&>(p);
-		std::cout << "Object class type = A\n";
+		std::cout << "Object class type = A\n" << &tmp;
 		return ;
 	}
 	catch(const std::bad_cast& e)
@@ -62,7 +62,7 @@ void identify(Base& p)
 	try
 	{
 		B &tmp = dynamic_cast<B&>(p);
-		std::cout << "Object class type = B\n";
+		std::cout << "Object class type = B\n"<< &tmp;
 		return ;
 
 	}
@@ -73,7 +73,7 @@ void identify(Base& p)
 	try
 	{
 		C &tmp = dynamic_cast<C&>(p);
-		std::cout << "Object class type = C\n";
+		std::cout << "Object class type = C\n"<< &tmp;
 		return ;
 	}
 	catch(const std::bad_cast& e)
