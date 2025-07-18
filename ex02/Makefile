@@ -6,17 +6,17 @@
 #    By: spitul <spitul@student.42berlin.de>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/13 17:47:50 by spitul            #+#    #+#              #
-#    Updated: 2025/07/17 20:58:02 by spitul           ###   ########.fr        #
+#    Updated: 2025/07/18 06:49:01 by spitul           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = Serializer.cpp Data.cpp main.cpp
+SRC = Base.cpp main.cpp
 OBJ = $(addprefix obj/, $(SRC:.cpp=.o))
 CC = c++
 CPPFLAGS = -g -Wall -Wextra -Werror -std=c++98 -pedantic
-HEADERS = Serializer.hpp Data.hpp
+HEADERS = Base.hpp
 
-NAME = serializer
+NAME = identifyer
 
 all: $(NAME)
 
